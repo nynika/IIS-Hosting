@@ -1,0 +1,85 @@
+To host a Django project with IIS you typically use a WSGI server to serve your Django application. Here's a step-by-step guide:
+
+### 1. Install Required Software:
+
+Make sure you have the required software installed on your server:
+
+###  1.Environment setup
+
+Create a environment
+
+bash
+Virtualenv env
+
+
+Activate the environment
+
+bash
+env\scripts\activate
+
+
+bash
+cd app (call your app name) 
+
+
+###  2. Install wfastcgi:
+bash
+pip install wfastcgi
+
+bash
+python manage.py runserver 0.0.0.0:8000
+
+
+### 3. Set up Django Project: (Seetings.py)
+
+ALLOWED_HOSTS = ['yourdomain.com', 'localhost', '127.0.0.1', '192.168.7.189']
+
+
+
+---------------------------------------------------------------------------------
+hosting IIS
+
+full path 
+Your project path
+
+
+open fascgi
+
+Full Path -->
+project -> env ->  scripts -> python.exe
+ example path C:\Sujithra\chatapp_0\env\Scripts\python.exe
+
+then..
+
+arguments  (this is from lib)
+
+C:\Sujithra\chatapp_0\env\Lib\site-packages\wfastcgi.py
+
+C:\Sujithra\chatapp_0\env\Lib\site-packages
+
+handler mapping -> executable(optional)
+env -> scripts -> change below the file name .exe ->
+C:\Sujithra\chatapp_0\env\Scripts\python.exe|C:\Sujithra\chatapp_0\env\Lib\site-packages\wfastcgi.py
+
+
+builded file 
+
+Using PyInstaller or cx_Freeze: 
+
+pip install pyinstaller
+pyinstaller your_script.py
+
+http://192.168.36.26:8000/login
+
+
+
+
+
+
+
+
+
+
+
+
+
